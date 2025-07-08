@@ -71,7 +71,7 @@ Type messages to receive real-time Gemini responses.
 
 ## 🧑‍💻 Author
 
-Built by **\[Your Name\]** as part of an AI engineering learning journey and the upcoming **SmartHire AI** project suite.
+Built by **\[TAIGA\]** as part of an AI engineering learning journey and the upcoming **SmartHire AI** project suite.
 
 * * *
 
