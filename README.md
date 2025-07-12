@@ -139,6 +139,20 @@ pip install -r requirements.txt
 
 * * *
 
+## 📁 Project Structure
+
+```text
+gemini-chatbot-cli/
+├── app.py                 # FastAPI server entry point
+├── chatbot_gemini.py      # CLI chatbot interface
+├── requirements.txt       # Dependencies
+├── .env                   # Your Gemini API key (NOT committed)
+├── .gitignore             # Hides .env and venv
+└── README.md              # Project overview and instructions
+```
+
+* * *
+
 ## 🧑‍💻 Author
 
 Built by **TAIGA** as part of an AI engineering learning journey and the upcoming **SmartHire AI** product suite.  
