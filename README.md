@@ -8,89 +8,138 @@ An interactive Command Line Interface chatbot powered by Google's Gemini API. Bu
 
 ### 1\. Clone repository
 
-bash
-
-CopyEdit
-
-`git clone YOUR_REPO_URL cd gemini-chatbot`
+```bash
+git clone https://github.com/AlexCK7/gemini-chatbot-cli.git
+cd gemini-chatbot-cli
+```
 
 ### 2\. Create virtual environment
 
-bash
-
-CopyEdit
-
-`python3 -m venv myenv source myenv/bin/activate`
+```bash
+python3 -m venv myenv source myenv/bin/activate
+```
 
 ### 3\. Install dependencies
 
-bash
+```bash
+pip install -r requirements.txt
+```
 
-CopyEdit
+### 4\. Create `.env` file
 
-`pip install -r requirements.txt`
+Create a `.env` file in the project root and add your Gemini API key:
 
-### 4\. Create `.env` with your Gemini API key
+```env
+GEMINI_API_KEY=your_actual_gemini_api_key_here
+```
 
-ini
-
-CopyEdit
-
-`GEMINI_API_KEY=YOUR_API_KEY_HERE`
+* * *
 
 ## 💻 Usage
 
-Run the chatbot:
+### ▶️ CLI Mode
 
-bash
+Run the chatbot interactively from your terminal:
 
-CopyEdit
+```bash
+python3 chatbot_gemini.py
+```
 
-`python3 chatbot_gemini.py`
+Type your messages and receive real-time Gemini responses.
 
-Type messages to receive real-time Gemini responses.
+* * *
 
-## ✨ Features
+### 🛰️ API Access (Optional)
 
-✅ Gemini API integration  
-✅ Environment variable security via python-dotenv  
-✅ Clean CLI interface for rapid prototyping
+You can also run the chatbot as a FastAPI server:
 
-## 🔮 Future Enhancements
+```bash
+uvicorn app:app --reload
+```
 
-*   LangChain integration for advanced pipelines
-    
-*   Conversation memory to hold context between turns
-    
-*   FastAPI/Flask routes for backend integration
-    
-*   Integration into SmartHire AI for resume and job flow chats
-    
-*   Local model deployment for cost-free operation (e.g. Ollama, Mistral)
-    
+Then send a POST request to `/chat` with a JSON body containing a `message` key:
 
-## 🧑‍💻 Author
+**Example:**
 
-Built by **\[TAIGA\]** as part of an AI engineering learning journey and the upcoming **SmartHire AI** project suite.
+```bash
+curl -X POST http://127.0.0.1:8000/chat \      
+-H "Content-Type: application/json" \      
+-d '{"message": "Tell me a joke"}'
+```
 
 * * *
 
 ## ✅ requirements.txt (full)
 
-Your current environment’s **minimal requirements.txt** for this project:
+This project requires the following minimal dependencies:
 
-text
+```text
+google-generativeai==0.8.5 
+python-dotenv==1.1.1 
+fastapi==0.111.0 
+uvicorn==0.30.1 
+pydantic==2.7.1
+```
 
-CopyEdit
+If you prefer to lock all packages to your current environment:
 
-`google-generativeai==0.8.5 python-dotenv==1.1.1`
+```bash
+pip freeze > requirements.txt
+```
 
-If you prefer to lock all packages in your environment, run:
+* * *
 
-bash
+## 🧪 Terminal Setup (if terminal was reset)
 
-CopyEdit
+If your terminal session was closed or reset:
 
-`pip freeze > requirements.txt`
+ 1.  **Open a terminal**
+     
+ 2.  Navigate back into the project:    
 
-But to keep it clean for this CLI-only project, the minimal above is sufficient.
+```bash
+cd ~/Desktop/gemini-chatbot-cli
+```
+
+3.  Reactivate your environment:
+
+```bash
+source myenv/bin/activate
+```
+
+4.  Reinstall packages (if needed):
+
+```bash
+pip install -r requirements.txt
+```
+
+* * *
+
+## ✨ Features
+
+✅ Gemini API integration  
+✅ FastAPI server mode for API-based usage  
+✅ Environment variable security via `python-dotenv`  
+✅ Clean CLI interface for rapid prototyping  
+✅ Easy local deployment and expansion
+
+* * *
+
+## 🔮 Future Enhancements
+
+* *   🔗 LangChain integration for advanced multi-step pipelines
+*     
+* *   🧠 Add memory to retain conversation history
+*     
+* *   🧩 Seamless SmartHire AI integration
+*     
+* *   💡 Deploy with Ollama or Mistral (local open-source LLMs)
+*     
+* *   📦 Containerize with Docker for production-ready use  
+
+* * *
+
+## 🧑‍💻 Author
+
+Built by **TAIGA** as part of an AI engineering learning journey and the upcoming **SmartHire AI** product suite.  
+Always evolving. Always shipping.
